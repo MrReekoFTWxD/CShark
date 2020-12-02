@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Functions.cpp">
+      <Filter>CShark\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="prx.cpp">
+      <Filter>CShark\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>CShark\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="handle.cpp">
+      <Filter>CShark\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="q_math.cpp">
+      <Filter>CShark\Source FIles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h">
+      <Filter>CShark\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>CShark\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.h">
+      <Filter>CShark\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>CShark\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="q_math.h">
+      <Filter>CShark\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="invoker.h">
+      <Filter>CShark\Invoker</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CShark">
+      <UniqueIdentifier>{8f8238d7-8cac-41a2-812a-f95ecb8e0c5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CShark\Header Files">
+      <UniqueIdentifier>{d39b2961-8302-4840-8dfb-764340fc74f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CShark\Source FIles">
+      <UniqueIdentifier>{56ae56ce-c2a6-48bb-aeeb-2acbe85c52c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CShark\Invoker">
+      <UniqueIdentifier>{2fcbc7f0-db48-400c-99bb-6cc2d5938fe2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

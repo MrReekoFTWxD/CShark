@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C825E6D8-929C-43EE-92B9-33812E78FFB9}</ProjectGuid>
+    <ProjectName>MW3Plugin</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="Configuration">
+    <PlatformToolset>GCC</PlatformToolset>
+    <NoTocRestore>Default</NoTocRestore>
+    <TocUsage>NoTocRestore</TocUsage>
+    <Callprof>false</Callprof>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ExceptionsAndRtti>NoExceptsWithRtti</ExceptionsAndRtti>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>GCC</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ExecutablePath>$(VCTargetsPath)\Platforms\PS3;$(SCE_PS3_ROOT)\host-win32\sn\bin;$(SCE_PS3_ROOT)\host-win32\ppu\bin;$(SCE_PS3_ROOT)\host-win32\spu\bin;$(SCE_PS3_ROOT)\host-win32\bin;$(SCE_PS3_ROOT)\host-win32\Cg\bin;$(SN_PS3_PATH)\bin;$(SN_COMMON_PATH)\bin;$(PATH);</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <IncludePath>$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;$(SCE_PS3_ROOT)\host-win32\ppu\lib\gcc\ppu-lv2\4.1.1\include</IncludePath>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__CELL_ASSERT__;__PS3__;__GCC__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <FastMath>false</FastMath>
+      <OptimizationLevel>Level1</OptimizationLevel>
+      <Permissive>false</Permissive>
+      <GenMicrocode>Default</GenMicrocode>
+      <MsExtensions>false</MsExtensions>
+      <RelaxCppCompliance>false</RelaxCppCompliance>
+      <CompileAs>Default</CompileAs>
+      <NoStrictAliasing>false</NoStrictAliasing>
+      <AnsiCompliance>false</AnsiCompliance>
+      <SignedChar>false</SignedChar>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libstdc++.a;$(SCE_PS3_ROOT)\target\ppu\lib\libstdc++_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(TargetDir)stubs.a</ImportLibrary>
+      <NoToc>false</NoToc>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="handle.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="prx.cpp" />
+    <ClCompile Include="q_math.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="handle.h" />
+    <ClInclude Include="invoker.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="q_math.h" />
+    <ClInclude Include="Structures.h" />
+  </ItemGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
